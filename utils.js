@@ -60,7 +60,7 @@ function serialize_2d(structure) {
     var str = "[";
     for (i = 0; i < structure.length; ++i) {
         str += serialize_1d(structure[i]);
-        if (i != structure.length - 1) {
+        if (i !== structure.length - 1) {
             // if not last array in the 2_d array
             // add a "," after the element we just inserted
             str += ",";
@@ -154,21 +154,4 @@ function deserialize(str, type=null) {
     }
 }
 
-// tests
 
-var lst = [[1,2,3,4],[5,6,7,8]];
-var de_lst = serialize_2d(lst);
-var re_lst = deserialize_2d(de_lst);
-
-de_lst = serialize(lst);
-re_lst = deserialize(de_lst);
-
-console.log(typeof 42);
-// expected output: "number"
-
-console.log(typeof 'b');
-// expected output: "string"
-
-console.log(lst);
-console.log(de_lst);
-console.log(re_lst);
